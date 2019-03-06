@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Test_Application</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="username_login">Username</string>
+    <string name="passwoord_login">Password</string>
+    <string name="lbl_registratie">Registreren</string>
+    <string name="username">Username</string>
+    <string name="passwoord">Password</string>
+    <string name="email">E-mailadres</string>
+    <string name="id_rasp">ID product</string>
+    <string name="cbx_delen">Locatie delen met andere gebruikers</string>
+    <string name="bevestigenRegistratie">Bevestigen</string>
+    <string name="bevestigenLogin">Login</string>
+    <string name="melding">Melding</string>
+</resources>
