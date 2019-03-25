@@ -12,4 +12,9 @@
     <string name="bevestigenRegistratie">Bevestigen</string>
     <string name="bevestigenLogin">Login</string>
     <string name="melding">Melding</string>
+    <string name="welkomWoord">Welkom</string>
+    <string name="GoToDatabase">Database</string>
+    <string name="title_table">Tabel</string>
+    <string name="title_chart">Grafiek</string>
+    <string name="title_troubleshoot">Info</string>
 </resources>
