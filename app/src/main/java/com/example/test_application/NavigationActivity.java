@@ -10,12 +10,19 @@ import android.view.MenuItem;
 
 public class NavigationActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        Bundle LoginUser = getIntent().getExtras();
+        String username = LoginUser.getString("user");
+        Fragment fragment = new TableFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("user", username);
+        fragment.setArguments(bundle);
+        loadFragment(fragment);
 
-        loadFragment(new TableFragment());
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -25,14 +32,21 @@ public class NavigationActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Bundle LoginUser = getIntent().getExtras();
+            String username = LoginUser.getString("user");
+            Bundle bundle = new Bundle();
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_table:
-                    fragment = new TableFragment();
+                    fragment = new TableFragment();;
+                    bundle.putString("user", username);
+                    fragment.setArguments(bundle);
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_chart:
                     fragment = new ChartFragment();
+                    bundle.putString("user", username);
+                    fragment.setArguments(bundle);
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_troubleshoot:
@@ -49,5 +63,11 @@ public class NavigationActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        finish();
     }
 }

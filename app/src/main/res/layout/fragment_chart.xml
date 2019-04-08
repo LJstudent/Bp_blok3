@@ -17,5 +17,23 @@
         android:layout_height="490dp"
         android:layout_gravity="center" />
 
+    <EditText
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:focusableInTouchMode="false"
+        android:ems="10"
+        android:hint="Datum" />
+
+    <Button
+        android:id="@+id/btnBevestigenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/btnBevestigenDatum"  />
+
 
 </FrameLayout>

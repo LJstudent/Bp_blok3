@@ -17,4 +17,25 @@
     <string name="title_table">Tabel</string>
     <string name="title_chart">Grafiek</string>
     <string name="title_troubleshoot">Info</string>
+    <string name="icon">Icon</string>
+    <string name="instraling">Globale instraling</string>
+    <string name="temperatuur">Temperatuur</string>
+    <string name="datum">Datum</string>
+    <string name="tijd">Tijd</string>
+    <string name="huidigeVermogen">Huidig vermogen</string>
+    <string name="btnUpdate">Update</string>
+    <string name="DatumTijd">Selecteer datum en tijd</string>
+    <string name="lbluitlegTabel">Uitleg tabel</string>
+    <string name="txtuitlegTabel">In de tabel kunt u de data vinden die het zon device registreert. U ziet de globale instraling, de temperatuur, datum en tijd
+    en als laatste het hw(Huidige vermogen). Het huidige vermogen is nog niet ingevuld deze kunt u aflezen van uw omvormer. Als u een rij selecteert ziet u onder de tabel
+    de datum en tijd en het huidige vermogen als het nog niet is ingevuld kunt uw er een getal neerzetten. Als u dan op update klikt wordt het ingevuld en krijgt uw een melding.
+    </string>
+    <string name="lblUitlegGrafiek">Uitleg grafiek</string>
+    <string name="txtUitlegGrafiek">In de grafiek kunt u de data vinden van een dag die u eerder geselecteerd heeft. U vindt hier de temperatuur(blauwe lijn) en de globale instraling(rode lijn).
+        Hiermee hopen wij uw meer inzicht te kunnen geven in de data die u ontvangt via het zon device.
+    </string>
+    <string name="btnBevestigenDatum">Bevestigen</string>
+
+
+
 </resources>

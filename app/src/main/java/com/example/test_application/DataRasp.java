@@ -1,15 +1,24 @@
 package com.example.test_application;
 
 public class DataRasp {
-    String  datum,temp,instraling, latitude, longitude;
+    String  datum,tijd,temp,instraling, latitude, longitude;
 
-    public DataRasp(String datum, String temp, String instraling, String latitude, String longitude) {
+    public DataRasp(String datum,String tijd, String temp, String instraling, String latitude, String longitude) {
 
         this.datum=datum;
+        this.tijd=tijd;
         this.temp=temp;
         this.instraling=instraling;
         this.latitude=latitude;
         this.longitude=longitude;
+    }
+
+    public String getTijd() {
+        return tijd;
+    }
+
+    public void setTijd(String tijd) {
+        this.tijd = tijd;
     }
 
     public String getDatum() {

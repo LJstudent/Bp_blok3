@@ -79,8 +79,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public void onClick(View v) {
+                Bundle LoginUser = getIntent().getExtras();
+                String username = LoginUser.getString("user");
+
                 Intent i = new Intent(v.getContext(), NavigationActivity.class);
+                i.putExtra("user", username);
                 startActivity(i);
+
             }
 
         });
@@ -110,7 +115,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             double latitude = Double.parseDouble(data.getLatitude());
             double longitude = Double.parseDouble(data.getLongitude());
             options.position(new LatLng(latitude, longitude));
-            options.title(data.getDatum());
+            options.title(data.getDatum() + "T" + data.getTijd());
             options.snippet("instraling " + data.getInstraling() + " W/m²" + "\n" + "temp " + data.getTemp() +"°");
             googleMap.addMarker(options);
 
@@ -173,20 +178,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             for (Object o : features) {
                 JSONObject jsonobject = (JSONObject) o;
                 String datum = checkValue(jsonobject, "datum");
+                String tijd = checkValue(jsonobject,"tijd");
                 String temp = checkValue(jsonobject, "temp");
                 String instraling = checkValue(jsonobject, "instraling");
                 String latitude = checkValue(jsonobject, "latitude");
                 String longitude = checkValue(jsonobject, "longitude");
 
-                /*
-                System.out.println(email);
-                System.out.println(username);
-                System.out.println(passwoord);
-                System.out.println(latitude);
-                System.out.println(longitude);
-                System.out.println(rasp_id);
-                */
-                DataRasp data = new DataRasp(datum,temp,instraling,latitude,longitude);
+
+                DataRasp data = new DataRasp(datum,tijd,temp,instraling,latitude,longitude);
                 list.add(data);
 
             }

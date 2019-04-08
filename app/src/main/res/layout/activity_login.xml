@@ -124,15 +124,6 @@
             android:inputType="numberDecimal" />
     </android.support.design.widget.TextInputLayout>
 
-    <Switch
-        android:id="@+id/keuze_delen"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/cbx_delen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIdRasp" />
 
     <Button
         android:id="@+id/btnBevestigen"
@@ -142,17 +133,37 @@
         android:layout_marginTop="8dp"
         android:text="@string/bevestigenRegistratie"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/keuze_delen" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIdRasp" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="106dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/bevestigenLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPasswordLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordLogin">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center"
+            android:stateListAnimator="@null"
+            android:text="@string/bevestigenLogin"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/imgCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/icon" />
+
+    </FrameLayout>
+
+
 
     <TextView
         android:id="@+id/melding"
