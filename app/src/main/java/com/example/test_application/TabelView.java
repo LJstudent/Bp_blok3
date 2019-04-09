@@ -1,5 +1,6 @@
 package com.example.test_application;
 
+// tabelview class
 public class TabelView {
     private String user,raspID,datum,tijd,temp,instraling,hw;
 

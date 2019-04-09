@@ -42,6 +42,7 @@ public class TableFragment extends Fragment {
     private EditText txtUpdateHw;
     private TextView datumTijd, melding;
 
+    // table fragment class hier wordt de tabel geladen.
     public TableFragment() {
         // Required empty public constructor
     }
@@ -119,6 +120,7 @@ public class TableFragment extends Fragment {
                 tv5.setText(huidVer);
                 tv5.setGravity(Gravity.CENTER);
 
+                // kan je de rij selecteren heel vet
                 row.setOnClickListener(new View.OnClickListener() {
 
                     @Override

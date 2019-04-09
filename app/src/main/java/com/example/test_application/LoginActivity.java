@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+// login en registeer class
 public class LoginActivity extends AppCompatActivity {
     private TextInputLayout textInputUsername;
     private TextInputLayout textInputPassword;
@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         btnbevestigen = findViewById(R.id.btnBevestigen);
         image=findViewById(R.id.imgCheck);
 
+        // gebruiker klikt op deze knop als die zich registreert eerst wordt alles gecheckt
         btnbevestigen.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
+        // gebruiker klikt op deze knop als die zich gaat aanmelden eerst wordt alles gecheckt
         btnbevestigenLogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -97,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    // heel veel checks
     private boolean validateLogin() {
         String usernameInputLogin = textInputUsernameLogin.getEditText().getText().toString().trim();
         String passwordInputLogin = textInputPasswordLogin.getEditText().getText().toString().trim();

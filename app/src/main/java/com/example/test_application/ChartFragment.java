@@ -48,7 +48,8 @@ public class ChartFragment extends Fragment {
 
 
 
-
+    // Fragment van navigation bar in dit fragment wordt er een grafiek getoond aan de hand van de gekozen data
+    // op de calendar.
     public ChartFragment() {
         // Required empty public constructor
     }
@@ -69,13 +70,13 @@ public class ChartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        JSON("http://192.168.178.116:9090/ords/hr/tableview/");
-        System.out.println(list.size());
+        // JSON alles ophalen voor datum check
+        JSONonReady();
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_chart, container, false);
 
-        // get context
+        // get context is nodig anders werkt er iets niet
         context = container.getContext();
 
         txtdatum = view.findViewById(R.id.datepicker);
@@ -85,6 +86,7 @@ public class ChartFragment extends Fragment {
         // get graph
         graph = view.findViewById(R.id.grafiek);
 
+        // Instellingen voor graph zo zie je een tweede grafiek
         graph.getSecondScale().setMinY(0);
         graph.getSecondScale().setMaxY(1000);
         //series2.setDrawDataPoints(true);
@@ -100,7 +102,7 @@ public class ChartFragment extends Fragment {
         graph.getGridLabelRenderer().setHorizontalLabelsAngle(135);
 
 
-
+        // Calendar dialog
         txtdatum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +137,8 @@ public class ChartFragment extends Fragment {
             public void onClick(View v) {
 
                 resetData();
+                // JSON alles ophalen voor datum check
+                JSONonReady();
 
                 String datum = txtdatum.getText().toString();
                 System.out.println(datum);
@@ -144,6 +148,12 @@ public class ChartFragment extends Fragment {
                     System.out.println(usernameApp);
 
                     if(checkDatum(usernameApp,datum)) {
+
+                        list.clear();
+                        System.out.println(list.size());
+                        JSON("http://192.168.178.116:9090/ords/hr/demo/tableview/"+datum);
+
+                        System.out.println(list.size());
 
                         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(generateData(usernameApp, datum));
                         LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(generateDataInstraling(usernameApp, datum));
@@ -163,15 +173,16 @@ public class ChartFragment extends Fragment {
 
         return view;
     }
-
+    // reset data dit is voor een foutmelding
     private void resetData() {
         graph.removeAllSeries();
         graph.getSecondScale().removeAllSeries();
     }
 
-
+    // genereren van grafiek 1
     private DataPoint[] generateData(String username, String datum) {
         int count = list.size();
+        System.out.println(list.size());
         DataPoint[] values = new DataPoint[count];
         int i = 0;
         while (i <count) {
@@ -191,7 +202,7 @@ public class ChartFragment extends Fragment {
         }
         return values;
     }
-
+    //genereren van grafiek 2
     private DataPoint[] generateDataInstraling(String username, String datum) {
         int count = list.size();
         DataPoint[] values = new DataPoint[count];
@@ -214,9 +225,15 @@ public class ChartFragment extends Fragment {
         return values;
     }
 
-
-
+    // JSON alles ophalen voor datum check
+    public void JSONonReady() {
+        // JSON string data dit komt omdat die later verandert als er meer dan 25 records zijn zoveel gaat er op een pagina
+        JSON("http://192.168.178.116:9090/ords/hr/demo/tableview");
+        System.out.println(list.size());
+    }
+    // JSON
     public void JSON(String JSONURL) {
+        System.out.println(JSONURL);
 
         JSONArray ja = new JSONArray();
 
@@ -276,6 +293,7 @@ public class ChartFragment extends Fragment {
         }
         return jo;
     }
+    // Check of er meer pagina's zijn
     public void CheckMore(String sURL) {
         //url changes every time
 
@@ -311,6 +329,7 @@ public class ChartFragment extends Fragment {
 
 
     }
+    // JSON voor het halen van de link
     public void JSON2(String JSONURL) {
 
         JSONArray ja = new JSONArray();
@@ -337,6 +356,7 @@ public class ChartFragment extends Fragment {
 
 
     }
+    // Check datum in tabel
     public boolean checkDatum(String username, String datum) {
         TabelView tabel = zoekDatum( username, datum);
         if( tabel != null )

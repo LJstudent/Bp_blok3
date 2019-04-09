@@ -32,6 +32,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+// map activity
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private UiSettings mUiSettings;
@@ -102,6 +103,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    // map markers worden is een loop
     @Override
     public void onMapReady(GoogleMap googleMap) {
 

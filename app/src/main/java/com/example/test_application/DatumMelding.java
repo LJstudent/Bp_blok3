@@ -10,7 +10,7 @@ import android.support.v4.app.DialogFragment;
 public class DatumMelding extends DialogFragment {
 
 
-
+    // Alert dialog als de gebruiker een datum op calendar gekozen heeft waar geen data is
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

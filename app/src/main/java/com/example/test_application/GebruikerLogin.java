@@ -12,6 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+// class waar alles wordt gecheckt
 public class GebruikerLogin {
     private final String JSONURL = "http://192.168.178.116:9090/ords/hr/gebruiker/";
     JSONObject jo = new JSONObject();

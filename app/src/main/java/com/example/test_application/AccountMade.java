@@ -11,6 +11,7 @@ public class AccountMade extends DialogFragment {
     String header;
 
 
+        // AlertDialogfragment als melding wanneer er een account is gemaakt
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

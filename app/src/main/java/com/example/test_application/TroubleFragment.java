@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 public class TroubleFragment extends Fragment {
 
+    // simpele class hier wordt in textviews uitgelegd hoe alles werkt
     public TroubleFragment() {
         // Required empty public constructor
     }

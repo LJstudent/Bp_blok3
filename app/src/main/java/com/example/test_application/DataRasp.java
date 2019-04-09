@@ -1,5 +1,6 @@
 package com.example.test_application;
 
+// class voor DataRasp dit is voor de class voor mapsactivity
 public class DataRasp {
     String  datum,tijd,temp,instraling, latitude, longitude;
 

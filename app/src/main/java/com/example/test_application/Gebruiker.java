@@ -1,5 +1,6 @@
 package com.example.test_application;
 
+// class gebruiker nodig voor gebruikerlogin
 public class Gebruiker {
     private String email,username,passwoord,latitude,longitude,rasp_id;
 
