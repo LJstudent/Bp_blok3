@@ -18,6 +18,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -160,6 +161,10 @@ public class ChartFragment extends Fragment {
                         graph.addSeries(series);
                         graph.getSecondScale().addSeries(series2);
                         series2.setColor(Color.RED);
+                        series.setTitle("Temperatuur");
+                        series2.setTitle("Instraling");
+                        graph.getLegendRenderer().setVisible(true);
+                        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
 
                     } else {
                         DialogFragment dialog = new DatumMelding();
